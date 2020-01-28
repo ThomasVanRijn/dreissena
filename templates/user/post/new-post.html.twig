@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Post{% endblock %}
+
+{% block main %}
+    <h1>Create new Post</h1>
+
+    {#{{ include('post/_form.html.twig') }}#}
+
+    {{ form_start(form) }}
+    <div class="card mb-4">
+        <div class="row w-100 m-0 pl-4 pt-5 pb-5" style="background: #f7f7f7; border-bottom: 1px solid #d8d8d8;">
+            {{ form_row(form.image) }}
+        </div>
+        <div class="card-body">
+            {{ form_row(form.title) }}
+            {{ form_row(form.beschrijving) }}
+        </div>
+        <div class="card-footer text-muted">
+            <button class="btn btn-outline-secondary">{{ button_label|default('Bericht plaatsen') }}</button>
+        </div>
+    </div>
+    <input type="file">
+    {{ form_end(form) }}
+{% endblock %}
